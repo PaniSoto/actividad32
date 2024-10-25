@@ -2,7 +2,7 @@ import Image from "next/image";
 
 
 export const metadata = {
-  title: "Información general: convalidaciones, exenciones y títulos y pollos",
+  title: "Información general: convalidaciones, exenciones y títulos y",
 };
 
 

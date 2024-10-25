@@ -1,10 +1,23 @@
 import Link from "next/link";
+import { menu, slug } from "@/lib/utils";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
-function Nav() {
+function Nav({pos}) {
     return ( 
         <div className="p-4 text-right">
-            <Link href={menu[pos-1]} className="rounded-l-full text-2xl text-blue-800 mr-8">Anterior</Link>
-            <Link href={menu[pos+1]} className="rounded-l-full text-2xl text-blue-300 mr-10">Siguiente</Link>
+            { pos > 0 &&
+            <Link href={slug(menu[pos -1])} className="p-2 rounded-l-full text-2xl text-blue-800 mr-8">
+                <ArrowLeft className="inline"/>Anterior
+                </Link>
+            
+            }
+
+            { pos < menu.length -1 &&
+            <Link href={slug(menu[pos +1])} className="p-2 rounded-l-full text-2xl text-blue-300 mr-10">
+                <ArrowRight className="inline"/>Siguiente
+                </Link>
+        }
+
         </div>
      );
 }
